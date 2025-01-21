@@ -1,10 +1,11 @@
 "use client";
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { removeUser } from "../redux/slice";
 
 function DisplayUsers() {
 	const userData = useSelector((data) => data.users);
-	console.log(userData);
+	const dispatch = useDispatch();
 
 	return (
 		<div className="flex flex-col items-center justify-center py-10 px-6">
@@ -20,7 +21,7 @@ function DisplayUsers() {
 							<span className="text-gray-700 font-medium">
 								{user.name}
 							</span>
-							<button className="text-red-500 font-semibold hover:text-red-700 transition">
+							<button onClick={() => dispatch(removeUser(user.id))} className="text-red-500 font-semibold hover:text-red-700 transition">
 								Remove
 							</button>
 						</li>
