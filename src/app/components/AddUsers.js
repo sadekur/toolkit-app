@@ -7,7 +7,7 @@ function AddUsers() {
 	const [name, setName] = useState("");
 	const dispatch = useDispatch();
 	const userDispatch = () => {
-		dispatch(AddUser(name));
+		dispatch(AddUser({name}));
 	};
 
 	return (
