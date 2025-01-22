@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { AddUser } from "../redux/slice";
 import { useDispatch } from "react-redux";
+import Link from "next/link";
 
 function AddUsers() {
 	const [name, setName] = useState("");
@@ -27,6 +28,7 @@ function AddUsers() {
 					className="w-full bg-blue-500 text-white font-semibold py-2 rounded-lg hover:bg-blue-600 transition duration-300">
 					Add User
 				</button>
+				<Link href="/removeUser" className="text-blue-500 hover:text-blue-700 mt-4">Remove User</Link>
 			</div>
 		</div>
 	);
