@@ -4,8 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { removeUser } from "../redux/slice";
 
 function DisplayUsers() {
-	const userData = useSelector((data) => data.users);
+	const userData = useSelector((data) => data.usersData.users);
 	const dispatch = useDispatch();
+	console.log(userData);
 
 	return (
 		<div className="flex flex-col items-center justify-center py-10 px-6">
