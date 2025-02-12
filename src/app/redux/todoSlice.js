@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, nanoid } from "@reduxjs/toolkit";
 
 const initialState = {
     todos: [],
@@ -9,9 +9,10 @@ const Slice = createSlice({
     initialState,
     reducers: {
         addTodos: (state, action) => {
+            console.log(action);
             const data = {
-                id: nanoid,
-                name: action.payload.name,
+                id: nanoid(),
+                name: action.payload,
             }
             state.todos.push(data);
         }
