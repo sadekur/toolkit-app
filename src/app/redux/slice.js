@@ -1,3 +1,6 @@
+import { act } from "react";
+import reducer from "./todoSlice";
+
 const {
   createSlice,
   nanoid,
@@ -11,6 +14,7 @@ const initialState = {
 };
 
 export const fetchApiUsers = createAsyncThunk("fetchApiUsers", async () => {
+	console.log("action");
   const response = await fetch("https://jsonplaceholder.typicode.com/users");
   const data = await response.json();
   return data;
@@ -40,6 +44,7 @@ const Slice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(fetchApiUsers.fulfilled, (state, action) => {
+	  console.log("reducer");
       state.isloading = false;
       state.userApiData = action.payload;
     });
