@@ -1,12 +1,16 @@
 "use client";
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchApiUsers } from '../redux/slice';
 
 export default function Page() {
     const dispatch = useDispatch();
     const users = useSelector((data) => data.usersData.userApiData);
+
+    useEffect(() => {
+        dispatch(fetchApiUsers());
+    }, []);
 
     return (
         <div className="min-h-screen flex flex-col items-center bg-gray-100 p-6">
@@ -15,12 +19,12 @@ export default function Page() {
                     API Users
                 </h1>
                 
-                <button 
+                {/* <button 
                     onClick={() => dispatch(fetchApiUsers())} 
                     className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition w-full"
                 >
                     Fetch Users
-                </button>
+                </button> */}
 
                 {/* Users List */}
                 <div className="mt-6 space-y-4">
