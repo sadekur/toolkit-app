@@ -31,6 +31,8 @@ function AddUsers() {
 				<Link href="/removeUser" className="text-blue-500 hover:text-blue-700 mt-4">Remove User</Link>
 				<br />
 				<Link href="/todoList" className="text-blue-500 hover:text-blue-700 mt-4">Todo List</Link>
+				<br />
+				<Link href="/apiUsers" className="text-blue-500 hover:text-blue-700 mt-4">API Users</Link>
 			</div>
 		</div>
 	);
